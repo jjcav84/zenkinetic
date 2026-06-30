@@ -2,6 +2,8 @@
 
 > *Privacy is not free — it costs negentropy. ZenKinetic makes privacy the
 > aligned flow, and transparency the penalty.*
+>
+> **By [Orkid Labs](https://www.orkidlabs.com)** — privacy-first crypto engineering
 
 A privacy-first transaction gating system for Horizen's Base L3 appchain,
 powered by the [negentropy](https://github.com/jjcav84/negentropy) physics
@@ -212,6 +214,12 @@ targeting the **Infrastructure + DeFi** track:
 
 See [`docs/grant-application.md`](docs/grant-application.md) for the full
 application aligned with the program's milestone structure.
+
+## About
+
+Built by [Orkid Labs](https://www.orkidlabs.com) — a privacy-first crypto
+engineering lab building thermodynamic infrastructure for decentralized
+systems. See our other work at [orkidlabs.com](https://www.orkidlabs.com).
 
 ## License
 

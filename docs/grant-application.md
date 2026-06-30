@@ -1,5 +1,7 @@
 # ZenKinetic — Thrive Horizen Genesis Program Application
 
+**By [Orkid Labs](https://www.orkidlabs.com)** — privacy-first crypto engineering
+
 ## Project Summary
 
 **ZenKinetic** is a thermodynamic privacy gate for Horizen Base L3 that
