@@ -153,21 +153,27 @@ the negentropy physics engine:
 
 ```text
 web3-defi/
-├── negentropy/      ← thermodynamic engine (shared library)
-├── orkid/           ← origin: FMD MEV detection (OrkidKineticHook)
-├── zenkinetic/      ← THIS: privacy gate for Horizen Base L3
-├── zk-age/          ← privacy-preserving age verification
-├── zk-attest/       ← ZK attestations on Hedera
-└── zk-ballot/       ← anonymous on-chain voting
+├── negentropy/          ← thermodynamic engine (shared library)
+├── orkid/               ← origin: FMD MEV detection (OrkidKineticHook)
+├── zenkinetic/          ← THIS: privacy gate for Horizen Base L3
+├── horizen-age/         ← age verification on Horizen (gated by ZenKinetic)
+├── horizen-attest/      ← ZK attestations on Horizen (gated by ZenKinetic)
+├── horizen-ballot/      ← anonymous voting on Horizen (gated by ZenKinetic)
+├── zk-age/              ← age verification (original, zkVerify)
+├── zk-attest/           ← ZK attestations (original, Hedera)
+└── zk-ballot/           ← anonymous voting (original, on-chain)
 ```
 
 | Project | Domain | negentropy Usage |
 |---------|--------|-----------------|
 | **orkid** | MEV detection | Route energy for arbitrage scoring (origin) |
 | **zenkinetic** | Privacy gating | Route energy for privacy alignment scoring |
-| **zk-age** | Age verification | Negentropy for proof quality scoring |
-| **zk-attest** | Attestations | Negentropy for attestation ranking |
-| **zk-ballot** | Anonymous voting | Negentropy for ballot quality scoring |
+| **horizen-age** | Age verification (Horizen) | Negentropy for proof scoring + ZenKinetic gate |
+| **horizen-attest** | Attestations (Horizen) | Negentropy for attestation scoring + ZenKinetic gate |
+| **horizen-ballot** | Anonymous voting (Horizen) | Negentropy for ballot scoring + ZenKinetic gate |
+| **zk-age** | Age verification (original) | Negentropy for proof quality scoring |
+| **zk-attest** | Attestations (original) | Negentropy for attestation ranking |
+| **zk-ballot** | Anonymous voting (original) | Negentropy for ballot quality scoring |
 
 ### Origin: orkid → ZenKinetic
 
