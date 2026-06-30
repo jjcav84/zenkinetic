@@ -116,8 +116,14 @@ impl PrivacyGate {
         let confidence = kind.base_confidence();
 
         // Depth ratio: anonymity set strength (more possible senders = more privacy)
+        // For non-anonymous ZK proofs (age, attestations), use constraint count as depth proxy
         let anonymity_set = 1u64 << profile.anonymity_set_bits;
-        let depth_ratio = confidence * profile.anonymity_set_bits as f64 / 4.0;
+        let depth_ratio = if profile.anonymity_set_bits > 0 {
+            confidence * profile.anonymity_set_bits as f64 / 4.0
+        } else {
+            // Non-anonymous proof: depth from constraint count (more constraints = more negentropy)
+            confidence * (profile.constraint_count as f64 / 4.0).max(1.0)
+        };
 
         // Timing factor: exponential decay based on proof age
         let timing_factor = (-profile.proof_age_secs / HALF_LIFE_SECS).exp();
