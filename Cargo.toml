@@ -1,0 +1,31 @@
+[workspace]
+members = ["cli"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Jacob Cavazos <jjcav84@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/jjcav84/zenkinetic"
+description = "Thermodynamic privacy gate for Horizen Base L3 — negentropy-scored confidential transactions with ZEN token utility"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[package]
+name = "zenkinetic"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Thermodynamic privacy gate for Horizen Base L3 — negentropy-scored confidential transactions with ZEN token utility"
+keywords = ["horizen", "zen", "privacy", "zero-knowledge", "negentropy"]
+categories = ["cryptography", "cryptography::cryptocurrencies"]
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+negentropy = { git = "https://github.com/jjcav84/negentropy.git" }
