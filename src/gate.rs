@@ -94,7 +94,7 @@ impl PrivacyGate {
         // Transparent transactions: no privacy scoring, standard fee
         if kind == TransactionKind::Transparent {
             let fee = STANDARD_FEE_BPS;
-            let discounted = (fee as f64 * (1.0 - stake.fee_discount())) as u32;
+            let discounted = (fee as f64 * (1.0 - stake.fee_discount())).round() as u32;
             return Self {
                 decision: GateDecision::Standard,
                 alignment: 0.0,
@@ -123,7 +123,8 @@ impl PrivacyGate {
             1u64 << profile.anonymity_set_bits
         };
         let depth_ratio = if profile.anonymity_set_bits > 0 {
-            confidence * profile.anonymity_set_bits as f64 / 4.0
+            // Clamp to 64 to prevent f64 precision loss for very large values
+            confidence * (profile.anonymity_set_bits.min(64)) as f64 / 4.0
         } else {
             // Non-anonymous proof: depth from constraint count (more constraints = more negentropy)
             confidence * (profile.constraint_count as f64 / 4.0).max(1.0)
@@ -171,7 +172,7 @@ impl PrivacyGate {
             GateDecision::Penalize => BASE_FEE_BPS,
             GateDecision::Standard => STANDARD_FEE_BPS,
         };
-        let discounted_fee = (base_fee as f64 * (1.0 - stake.fee_discount())) as u32;
+        let discounted_fee = (base_fee as f64 * (1.0 - stake.fee_discount())).round() as u32;
 
         Self {
             decision,
