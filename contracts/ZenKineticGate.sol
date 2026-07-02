@@ -185,7 +185,9 @@ contract ZenKineticGate is Ownable, ReentrancyGuardTransient {
     ) internal pure returns (uint256 alignment, uint256 negentropyBits) {
         // Negentropy: N = constraints × anonymity_set_bits
         // (since log₂(2^bits) = bits)
+        // Cap to prevent overflow in downstream multiplication
         negentropyBits = constraintCount * anonymitySetBits;
+        if (negentropyBits > 10000) negentropyBits = 10000;
 
         // Timing decay: exp(-age / half_life) approximated linearly
         // For on-chain efficiency, use: max(0, 10000 - (age * 10000 / half_life))
@@ -198,6 +200,8 @@ contract ZenKineticGate is Ownable, ReentrancyGuardTransient {
         uint256 latencyFactor = 10000 * 10000 / (10000 + totalLatencyMs);
 
         // Alignment: product of factors, normalized to 10000
+        // All three factors are now capped at 10000, so max product = 10000^3 = 1e12
+        // Divided by 10000^2 = 1e8, giving max result = 10000 — no overflow
         alignment = (negentropyBits * timingFactor * latencyFactor) / (10000 * 10000);
 
         // Cap at 10000 (100%)
