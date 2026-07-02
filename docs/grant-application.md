@@ -145,7 +145,7 @@ privacy infrastructure:
   Base/Ethereum, audited TVMExecutor smart contract)
 - Created the negentropy physics engine (generalized from orkid's FMD
   model, 47 tests, used across 4 projects)
-- Published the theoretical foundation as a peer-reviewed preprint:
+- Published the theoretical foundation as a preprint:
   ["Negative EV per Unit Time as Blockchain Inefficiency"](https://www.researchgate.net/publication/399474539_Negative_EV_per_Unit_Time_as_Blockchain_Inefficiency)
   — [ResearchGate profile](https://www.researchgate.net/profile/Jacob-Cavazos)
 - Built zk-age, zk-attest, zk-ballot — three privacy-preserving ZK
