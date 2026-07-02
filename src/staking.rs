@@ -78,6 +78,7 @@ pub struct ZenStake {
 impl ZenStake {
     /// Create a stake position from a staked amount.
     pub fn new(amount: f64) -> Self {
+        assert!(amount.is_finite() && amount >= 0.0, "stake amount must be non-negative");
         Self {
             amount,
             tier: StakeTier::from_staked(amount),
