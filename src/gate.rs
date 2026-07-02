@@ -117,7 +117,11 @@ impl PrivacyGate {
 
         // Depth ratio: anonymity set strength (more possible senders = more privacy)
         // For non-anonymous ZK proofs (age, attestations), use constraint count as depth proxy
-        let anonymity_set = 1u64 << profile.anonymity_set_bits;
+        let anonymity_set = if profile.anonymity_set_bits >= 64 {
+            u64::MAX
+        } else {
+            1u64 << profile.anonymity_set_bits
+        };
         let depth_ratio = if profile.anonymity_set_bits > 0 {
             confidence * profile.anonymity_set_bits as f64 / 4.0
         } else {
