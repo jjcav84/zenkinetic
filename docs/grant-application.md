@@ -1,4 +1,4 @@
-# ZenKinetic — Thrive Horizen Genesis Program Application
+# ZenKinetic — Thrive Horizen Genesis Program (#38) Application
 
 **By [Orkid Labs](https://www.orkidlabs.com)** — privacy-first crypto engineering
 
@@ -94,7 +94,11 @@ ZenKinetic is part of a proven ecosystem of privacy-preserving ZK projects:
 - [negentropy](https://github.com/jjcav84/negentropy) — The shared physics
   engine (47 tests, production-ready)
 - [orkid](https://github.com/jjcav84/orkid) — Origin of the thermodynamic
-  gate concept (195+ live fills on Base/Ethereum)
+  gate concept (195+ live fills on Base/Ethereum). **Private repo — access
+  available for Thrive Protocol reviewers and other appropriate cases on
+  request.** Theoretical foundation published as preprint: ["Negative EV
+  per Unit Time as Blockchain Inefficiency"](https://www.researchgate.net/publication/399474539_Negative_EV_per_Unit_Time_as_Blockchain_Inefficiency)
+  — [Jacob Cavazos, ResearchGate](https://www.researchgate.net/profile/Jacob-Cavazos).
 - [zk-age](https://github.com/jjcav84/zk-age) — Privacy-preserving age
   verification (negentropy-powered)
 - [zk-attest](https://github.com/jjcav84/zk-attest) — ZK attestations on
@@ -141,6 +145,9 @@ privacy infrastructure:
   Base/Ethereum, audited TVMExecutor smart contract)
 - Created the negentropy physics engine (generalized from orkid's FMD
   model, 47 tests, used across 4 projects)
+- Published the theoretical foundation as a peer-reviewed preprint:
+  ["Negative EV per Unit Time as Blockchain Inefficiency"](https://www.researchgate.net/publication/399474539_Negative_EV_per_Unit_Time_as_Blockchain_Inefficiency)
+  — [ResearchGate profile](https://www.researchgate.net/profile/Jacob-Cavazos)
 - Built zk-age, zk-attest, zk-ballot — three privacy-preserving ZK
   applications, all powered by negentropy
 - Deep expertise in: Rust, Solidity, Halo2, ZK circuits, thermodynamic
@@ -216,9 +223,10 @@ privacy infrastructure:
 
 - [negentropy](https://github.com/jjcav84/negentropy) — The physics of
   information extraction
-- [orkid OrkidKineticHook.sol](https://github.com/jjcav84/orkid/blob/main/contracts/OrkidKineticHook.sol) — Origin of the thermodynamic gate
-- [orkid blog: Blockchain Thermodynamics](https://github.com/jjcav84/orkid/blob/main/blog/2025-10-18-blockchain-thermodynamics-negentropy-mev.md)
-- [orkid blog: Negentropy = Information](https://github.com/jjcav84/orkid/blob/main/blog/2025-11-06-negentropy-information-generalized-framework.md)
+- orkid OrkidKineticHook.sol — Origin of the thermodynamic gate (private repo)
+- [orkid blog: Blockchain Thermodynamics](https://www.orkidlabs.com/blog/blockchain-thermodynamics-negentropy-mev-physics/)
+- [orkid blog: Negentropy = Information](https://www.orkidlabs.com/blog/negentropy-information-generalized-framework/)
+- Cavazos, J. — ["Negative EV per Unit Time as Blockchain Inefficiency"](https://www.researchgate.net/publication/399474539_Negative_EV_per_Unit_Time_as_Blockchain_Inefficiency) (preprint)
 - Shannon (1948) — Information entropy
 - Landauer (1961) — Thermodynamic cost of information erasure
 - Brillouin (1953) — Negentropy principle

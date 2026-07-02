@@ -15,6 +15,13 @@ engine. ZenKinetic adapts the thermodynamic gate concept from orkid's
 [`OrkidKineticHook`](https://github.com/jjcav84/orkid/blob/main/contracts/OrkidKineticHook.sol)
 — converting it from **MEV protection** to **privacy protection**.
 
+> **Note:** The orkid repository is private. Access can be provided to
+> Thrive Protocol reviewers and other appropriate cases on request —
+> contact [Orkid Labs](https://www.orkidlabs.com). The theoretical
+> foundation is published as a preprint:
+> ["Negative EV per Unit Time as Blockchain Inefficiency"](https://www.researchgate.net/publication/399474539_Negative_EV_per_Unit_Time_as_Blockchain_Inefficiency)
+> — [Jacob Cavazos, ResearchGate](https://www.researchgate.net/profile/Jacob-Cavazos).
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-a78bfa.svg)](LICENSE)
 [![Rust](https://img.shields.io/badge/Rust-1.70%2B-a78bfa.svg)](https://www.rust-lang.org/)
 [![Horizen](https://img.shields.io/badge/Horizen-Base%20L3-ff6b35.svg)](https://horizen.org)
@@ -205,7 +212,7 @@ cargo test
 stale proof decay, stake tier discounts, anonymity set scaling, and
 committor probability bounds. Clippy-clean.
 
-## Grant: Thrive Horizen Genesis Program
+## Grant: Thrive Horizen Genesis Program (#38)
 
 ZenKinetic is built for the [Thrive Horizen Genesis Program](https://horizen.org),
 targeting the **Infrastructure + DeFi** track:
